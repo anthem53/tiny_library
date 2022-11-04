@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthem53's Tiny Library</title>
+
+    <script>
+        function calc_s2hms() {
+            var inputSecondString = document.getElementById("input1").value;
+            
+            if (inputSecondString.length < 1){
+                document.getElementById("result1-1").value= ''
+                document.getElementById("result1-2").value= ''
+                document.getElementById("result1-3").value= ''
+                return;
+            }
+            else{
+                var inputSecond = Number(inputSecondString)
+                
+                var hour,minite,second;
+
+                hour = parseInt( inputSecond / 3600);
+                minite = parseInt((inputSecond % 3600) / 60);
+                second = inputSecond - 3600 * hour - 60 * minite 
+
+                document.getElementById("result1-1").value= hour
+                document.getElementById("result1-2").value= minite
+                document.getElementById("result1-3").value= second
+
+            }
+            
+        }
+        function calc_hms2s(){
+            var hour, minite, second;
+            hour = document.getElementById("input2-1").value
+            minite = document.getElementById("input2-2").value
+            second = document.getElementById("input2-3").value
+
+            if (hour.length < 1){
+                hour = 0;
+                document.getElementById("input2-1").value = 0;
+            }
+            else{
+                hour = Number(hour)
+            }
+            if (minite.length < 1){
+                minite  = 0;
+                document.getElementById("input2-2").value = 0
+            }
+            else{
+                minite = Number(minite)
+            }
+            if (second.length < 1){
+                second = 0;
+                document.getElementById("input2-3").value = 0
+            }
+            else{
+                second = Number(second)
+            }
+
+                document.getElementById("result2").value = (hour * 3600) + (minite * 60) + (second);
+            
+        }
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            align-items: center;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+
+        #header{
+            
+            display: block;
+            border: 15px solid #000000;
+            background-color: aqua;
+            
+        }
+        #logo{
+            margin-top: 100px;
+            padding : 50px;     
+            
+        }
+        #logo img {
+            height: 200px;
+        }
+        #banner{
+            font-weight:  bold; 
+            color: linear-gradient(135deg, mediumturquoise 0%,  100%);
+            font-size: 5rem;
+            padding: 30px;
+            text-align: center;
+            vertical-align: "middle";
+            
+        }
+        #menu{
+            margin-right: auto;
+            background-color: aquamarine;
+            color: darkblue;
+
+        }
+
+        #menu ul{
+            list-style: none;
+            background-color: aquamarine;
+            overflow: hidden;
+		} 
+        #menu ul a:link,a:visited, a:active{
+            color : black
+        }
+        #menu ul li{
+            background-color:  whitesmoke;
+            width: 210px;
+            border: 10px solid rgb(30, 190, 115);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float:left;
+            font-size: 18px;
+            font-weight:bold;
+            display:inline;
+	    }
+        #menu ul li:hover{
+		    background-color: red;
+	    }
+
+        .s2hts{
+            margin-bottom: 100px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <header id="header">
+        <div>
+            <span id= "logo">
+                <a href="index.html">
+					<img alt="Owls drawing" src="owls_logo.png">
+				</a>
+            </span>
+            <span id='banner' >
+                <a  href="index.html"  >
+                    Anthem53's Tiny Library
+                </a>
+            </span>
+        </div>
+    </header>
+    
+    <div id="menu" align="center">
+        <ul>
+            <li>
+                <a href="calc_second.html">
+                    초를 시분초로 변환
+                </a>
+            </li>
+            <li>
+                2
+            </li>
+            <li>
+                3
+            </li>
+            <li>
+                4
+            </li>
+
+        </ul>
+    </div>
+
+    <p align="center" style="font-weight: bold; font-size: 43px;">
+        해당 항목에서는 원하는 초를 입력하면 해당 초를 n시 m분 k초로 변환하는 계산을 해줍니다. <br> 
+        n시, m분, k초의 시간을 순수한 초단위로 바꾸는 계산을 해줍니다.
+    </p>
+
+    <div align="center" class="s2hts">
+        <h1>N초 -> 시분초</h1>
+        <h2> 입력 </h2>
+        <label>몇초?   : <input type="number" id="input1">  </label> 
+        <span>
+            <button type="button" onclick="calc_s2hms()">
+                변환
+            </button>
+        </span>
+        <h2>결과</h2>
+        <label><input type="number" size="10" id="result1-1"> 시  </label>
+        <label><input type="number" id="result1-2"> 분  </label>
+        <label><input type="number" id="result1-3"> 초</label>
+    
+    </div>
+    
+    <div align="center" style="border: black;"> 
+        <h1>시분초 -> 초</h1>
+        <h2> 입력 </h2>
+        <label><input type="number" size="10" id="input2-1"> 시  </label>
+        <label><input type="number" id="input2-2"> 분  </label>
+        <label><input type="number" id="input2-3"> 초</label>
+        <span>
+            <button type="button" onclick="calc_hms2s()">
+                변환
+            </button>
+        </span>
+        <h2>결과</h2>
+        <label><input type="number" size="10" id="result2"> 초  </label>
+        
+    </div>
+    
+
+</body>
+</html>
