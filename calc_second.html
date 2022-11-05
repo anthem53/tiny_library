@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthem53's Tiny Library</title>
+    <link rel="stylesheet" type="text/css" href="font.css">
 
     <script>
         function calc_s2hms() {
@@ -141,10 +142,18 @@
             margin-bottom: -1px;
             
         }
+        
+        .title{
+            color : black;
+            font-weight: bold; 
+            font-size: 50px;
+            margin-left: 50px;
+            font-family: 'coockierun';
+        }
 
 
     </style>
-
+  
 
 </head>
 <body>
@@ -171,7 +180,11 @@
         </ul>
     </div>
 
-    <p align="center" style="font-weight: bold; font-size: 43px;">
+    <p align="left" class="title" >
+        초를 시분초로 변환
+    </p>
+    
+    <p align="center" style=" font-size: 43px;">
         해당 항목에서는 원하는 초를 입력하면 해당 초를 n시 m분 k초로 변환하는 계산을 해줍니다. <br> 
         n시, m분, k초의 시간을 순수한 초단위로 바꾸는 계산을 해줍니다.
     </p>
