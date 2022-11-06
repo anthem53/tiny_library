@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="import" href="header.html">
+    <script type="text/javascript">
+
+        function checkSupportsImport() {
+        
+            console.log( 'import' in document.createElement('link') );
+        
+            return 'import' in document.createElement('link');
+        
+        }
+        
+        if ( checkSupportsImport() ){
+        
+        //지원되면 여기에 코딩
+        
+        //import한 내용을 id="contents" 에 넣는 작업 하면된다.
+        
+        }else{
+        
+        //안되면 오류 처리를 여기 코딩
+        
+        }
+        
+        </script>
+</head>
+<body>
+    <div id="header">이부분은 헤더</div>
+
+    <div id="contents"></div>
+</body>
+</html>
