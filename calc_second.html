@@ -38,10 +38,12 @@
             hour = document.getElementById("input2-1").value
             minite = document.getElementById("input2-2").value
             second = document.getElementById("input2-3").value
+            var isHourZero= false , isMiniteZero= false, isSecondZero= false;
 
             if (hour.length < 1){
                 hour = 0;
                 document.getElementById("input2-1").value = 0;
+                isHourZero = true;
             }
             else{
                 hour = Number(hour)
@@ -49,6 +51,7 @@
             if (minite.length < 1){
                 minite  = 0;
                 document.getElementById("input2-2").value = 0
+                isMiniteZero = true
             }
             else{
                 minite = Number(minite)
@@ -56,12 +59,23 @@
             if (second.length < 1){
                 second = 0;
                 document.getElementById("input2-3").value = 0
+                isSecondZero = true
             }
             else{
                 second = Number(second)
             }
 
+            if ( (isHourZero && isMiniteZero && isSecondZero) == true ) {
+                document.getElementById("input2-1").value = ''
+                document.getElementById("input2-2").value = ''
+                document.getElementById("input2-3").value = ''
+                document.getElementById("result2").value = ''
+            }
+            else{
                 document.getElementById("result2").value = (hour * 3600) + (minite * 60) + (second);
+            }
+
+            
             
         }
     </script>
@@ -74,6 +88,13 @@
         
         a{
             text-decoration: none;
+        }
+
+        input{
+            font-size: 20px;
+        }
+        button{
+            font-size: 17px;
         }
 
         #header{
@@ -132,6 +153,7 @@
 		    background-color: red;
 	    }
 
+
         .s2hts{
             margin-bottom: 100px;
             border:1px solid; 
@@ -150,6 +172,7 @@
             margin-left: 50px;
             font-family: 'coockierun';
         }
+
 
 
     </style>
@@ -192,32 +215,32 @@
     <div align="center" class="s2hts">
         <h1>N초 -> 시분초</h1>
         <h2> 입력 </h2>
-        <label>몇초?   : <input type="number" id="input1">  </label> 
+        <label>몇초?   : <input type="number" id="input1" class="inputPart">  </label> 
         <span>
-            <button type="button" onclick="calc_s2hms()">
+            <button type="button" onclick="calc_s2hms()" >
                 변환
             </button>
         </span>
         <h2>결과</h2>
-        <label><input type="number" size="10" id="result1-1"> 시  </label>
-        <label><input type="number" id="result1-2"> 분  </label>
-        <label><input type="number" id="result1-3"> 초</label>
+        <label><input type="number" size="10" id="result1-1" readonly> 시 &nbsp&nbsp  </label>
+        <label><input type="number" id="result1-2" readonly> 분&nbsp&nbsp  </label>
+        <label><input type="number" id="result1-3" readonly> 초</label>
     
     </div>
     
     <div class="s2hts" align="center"  > 
         <h1>시분초 -> 초</h1>
         <h2> 입력 </h2>
-        <label><input type="number" size="10" id="input2-1"> 시  </label>
-        <label><input type="number" id="input2-2"> 분  </label>
-        <label><input type="number" id="input2-3"> 초</label>
+        <label><input type="number" size="10" id="input2-1" class="inputPart"> 시&nbsp&nbsp  </label>
+        <label><input type="number" id="input2-2" class="inputPart"> 분&nbsp&nbsp  </label>
+        <label><input type="number" id="input2-3" class="inputPart"> 초&nbsp&nbsp  </label>
         <span>
             <button type="button" onclick="calc_hms2s()">
                 변환
             </button>
         </span>
         <h2>결과</h2>
-        <label><input type="number" size="10" id="result2"> 초  </label>
+        <label><input type="number" size="10" id="result2" readonly> 초  </label>
         
     </div>
     
