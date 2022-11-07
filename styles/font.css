@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 @font-face {
     font-family: 'ghanachoco';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
@@ -7,5 +9,10 @@
 
 @font-face {
     font-family: 'coockierun';
-    src: url('font/CookieRun Regular.ttf');
+    src: url('../font/CookieRun Regular.ttf');
+}
+
+@font-face {
+    font-family: 'aggro';
+    src: url('../font/SB 어그로 L.ttf');
 }
