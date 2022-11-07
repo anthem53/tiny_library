@@ -1,0 +1,22 @@
+#header{
+    display: block;
+    border: 15px solid #000000;
+    background-color: aqua;
+}
+#logo{
+    margin-top: 100px;
+    padding : 50px;     
+    
+}
+#logo img {
+    height: 200px;
+}
+#banner{
+    font-weight:  bold; 
+    color: linear-gradient(135deg, mediumturquoise 0%,  100%);
+    font-size: 5rem;
+    padding: 30px;
+    text-align: center;
+    vertical-align: "middle";
+    
+}
