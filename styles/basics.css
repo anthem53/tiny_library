@@ -1,6 +1,7 @@
 body{
     align-items: center;
-    margin: 0;
+
+    background: linear-gradient( to right, #FFEFBA, #FFFFFF );
 }
 
 a{
