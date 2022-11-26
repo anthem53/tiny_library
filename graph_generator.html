@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good link site</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/font.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">
+    <link rel="stylesheet" type="text/css" href="styles/header.css">
+    <link rel="stylesheet" type="text/css" href="styles/basics.css">
+    <link rel="stylesheet" type="text/css" href="styles/footer.css">
+
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/graph_genarator/generator.js"></script>
+
+    <style> 
+        h1{
+            margin-left: 30px;
+        }
+        h2{
+            margin-left:60px
+        }
+        h3{
+            margin-left:100px
+        }
+
+        .h3Content{
+            margin-left: 140px;
+        }
+        .h2Content{
+            margin-left:100px
+        }
+        .h1Content{
+            margin-left:60px
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <span id= "logo">
+                <a href="index.html">
+					<img alt="Owls drawing" src="owls_logo.png">
+				</a>
+            </span>
+            <span id='banner' >
+                <a  href="index.html"  >
+                    Anthem53's Tiny Library
+                </a>
+            </span>
+        </div>
+    </header>
+    <div id="menu" align="center">
+        <ul>
+            <li onclick="document.location.href='index.html'">
+                    홈으로 돌아가기
+            </li>
+        </ul>
+    </div>
+
+    <h1 class="title"> 그래프 생성하는 사이트 </h1>
+
+    <div class="contents">
+        <H1>설명</H1>
+            <div class="h1Content">
+                <a herf="https://www.acmicpc.net/problem/1260" target="_blank">
+                    <img alt="Owls drawing" src="./images/graph_input_example.png" >
+                </a> 
+                <p> 다음처럼 알고리즘 테스트에 사용될 그래프를 자동으로 생성해주는 사이트이다.</p>
+            </div>
+        <H1>생성</H1>
+            <div class="h1Content">
+                <div id="graphType" >
+                    <span style="margin-right:50px">
+                        그래프 방향 타입 : 
+                        <select title="sample" name="graph_type" id="graph_type">
+                            <option value="u">무방향 그래프</option>
+                            <option value="d">유방향 그래프</option>
+                        </select>
+                    </span>
+                    <span style="margin-right:50px">
+                        입력 꼴
+                        <select title="CostType" name="input_type" id="input_type">
+                            <option value="01"> V E &nbsp;&nbsp;&nbsp;S D</option>
+                            <option value="0pn">V E &nbsp;&nbsp;&nbsp;S D W</option>
+                            <option value="01s">V E S &nbsp;&nbsp;&nbsp;S D</option>
+                            <option value="0pns">V E S &nbsp;&nbsp;&nbsp;S D W</option>
+                        </select>
+                    </span>
+                    <span style="margin-right:50px">
+                        노드간 거리가 1 혹은 거리 :
+                        <select title="CostType" name="cost_type">
+                            <option value="Zero_One"> 노드간 거리가 1 혹은 0이다.</option>
+                            <option value="Zero_Positive">노드간 거리가 0 or 1이외 다른 값도 있다.</option> 
+                        </select>
+                    </span>
+                </div>
+                <div>
+                    <div style="padding:10px; padding-left: 0px;">
+                        V의 범위 :  최솟값 : <input title="vMin" id="vMin" type="number" style="margin-right:50px" > 최댓값 : <input title="vMax" type="number"  id="vMax">
+                    </div>
+                    <div style="padding:10px; padding-left: 0px;">
+                        E의 범위 :  최솟값 : <input title="eMin"  id="eMin" type="number" style="margin-right:50px"> 최댓값 : <input title="eMax" type="number" id="eMax">
+                    </div>
+                    <div style="padding:10px; padding-left: 0px;">
+                        W의 범위 :  최솟값 : <input title="wMin"  id="wMin" type="number" style="margin-right:50px"> 최댓값 : <input title="WMax" type="number" id="wMax">
+                    </div>
+                </div>
+                <div style="margin-top:20px">
+                    <button onclick="generate_Graph()"> <span style="padding:20px">생성</span>  </button>
+                </div>
+
+            </div>
+        <H1>결과 </H1>
+            <div class="h1Content">
+                <label style="margin-right:50px">결과 : <textarea cols="20" rows="20" id="result" readonly></textarea></label>
+                
+                <label>비고 : <textarea cols="20" rows="20" id="resultInfo" readonly></textarea></label>
+                <div style="margin-top:20px">
+                    <button onclick="copy_result()"> <span style="padding:20px">결과 복사</span>  </button>
+                </div>
+            </div>
+        <H1> 생성된 그래프 모양</H1>
+            <div class="h1Content">
+
+            </div>
+        
+    </div>
+    
+    
+    <div align="center" class="footer">
+        <hr>
+        <span>
+            <a href="https://github.com/anthem53/tiny_library" target="_blank">
+                개발자 깃허브 링크 
+            </a>
+        </span>
+
+    </div>
+
+</body>
+</html>
